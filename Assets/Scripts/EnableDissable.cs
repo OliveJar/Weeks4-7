@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnableDissable : MonoBehaviour
 {
     public SpriteRenderer sr;
-    public GameObject go;
+    public GameObject Canvas;
     public AudioClip switchOn;
     public AudioClip switchOff;
     public AudioSource source;
@@ -19,17 +19,17 @@ public class EnableDissable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && go.active)
+        if (Input.GetMouseButtonDown(0) && Canvas.active)
         {
             sr.enabled = false;
-            go.SetActive(false);
+            Canvas.SetActive(false);
             source.PlayOneShot(switchOff);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && !go.active)
+        if (Input.GetKeyDown(KeyCode.Space) && !Canvas.active)
         {
             sr.enabled = true;
-            go.SetActive(true);
+            Canvas.SetActive(true);
             source.PlayOneShot(switchOn);
         }
     }
