@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     public GameObject ammo;
+    public AudioClip ammoclip;
     public AudioSource ammoSound;
     private float x;
     private float y;
@@ -17,8 +18,8 @@ public class Ammo : MonoBehaviour
 
         if (x < 1.5 && y < 1.5)
         {
+            ammoSound.PlayOneShot(ammoclip);
             ammo.SetActive(false);
-            ammoSound.Play();
         }
     }
 }
