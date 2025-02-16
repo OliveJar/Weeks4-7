@@ -7,7 +7,7 @@ public class Playermovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public Transform Weapon;
-    public Transform Ground;
+    public float groundY = -5;
     private float gY;
     private bool isFalling;
     private float y;
@@ -38,7 +38,7 @@ public class Playermovement : MonoBehaviour
         x = Weapon.transform.position.x - transform.position.x;
         y = Weapon.transform.position.y - transform.position.y;
 
-        gY = Ground.transform.position.y - transform.position.y;
+        gY = groundY - transform.position.y;
 
         if (x < 1.5 && y < 1.5)
         {

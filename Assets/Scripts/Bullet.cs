@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 {
     private Transform enemy;
 
+    public static bool hit;
+
     private float x;
     private float y;
 
@@ -25,6 +27,7 @@ public class Bullet : MonoBehaviour
         if (x < 14 && y < 1 && x >-14 && y >-1 && Input.GetButtonDown("Fire1"))
         {
             print("within range");
+            hit = true;
         }
     }
 }
