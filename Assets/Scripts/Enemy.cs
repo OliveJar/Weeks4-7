@@ -32,5 +32,7 @@ public class Enemy : MonoBehaviour
             print("hit");
             Destroy(gameObject);
         }
+
+        Destroy(gameObject, 20);
     }
 }

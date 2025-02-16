@@ -47,7 +47,7 @@ public class Playermovement : MonoBehaviour
             Weapon.transform.position = transform.position;
         }
 
-        if (gY > -1.1746f)
+        if (gY > -1.1f)
         {
             isFalling = false;
         }
