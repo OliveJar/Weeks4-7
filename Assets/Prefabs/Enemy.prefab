@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2359464104776772312}
   speed: -10
+  scoreText: {fileID: 0}
   bullet: {fileID: 0}
 --- !u!54 &2359464104776772312
 Rigidbody:

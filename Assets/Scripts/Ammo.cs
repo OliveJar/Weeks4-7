@@ -7,7 +7,7 @@ public class Ammo : MonoBehaviour
     public GameObject ammo;
     public AudioClip ammoclip;
     public AudioSource ammoSound;
-    public float time = 5;
+    public float time = 80;
     private float T = 300;
     private float x;
     private float y;
@@ -15,7 +15,7 @@ public class Ammo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        T += time * Time.deltaTime;
+        T -= time * Time.deltaTime;
 
 
         x = ammo.transform.position.x - transform.position.x;
