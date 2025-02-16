@@ -12,7 +12,9 @@ public class Playermovement : MonoBehaviour
     private bool isFalling;
     private float y;
     private float x;
-    // Start is called before the first frame update
+
+    public float minX = -27;
+    public float maxX = 27;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,6 +55,8 @@ public class Playermovement : MonoBehaviour
         {
             isFalling = true;
         }
+
+        transform.position = new Vector2(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y);
 
     }
 

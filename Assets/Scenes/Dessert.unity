@@ -1794,6 +1794,8 @@ MonoBehaviour:
   rb: {fileID: 800337052}
   Weapon: {fileID: 47863767}
   groundY: -5
+  minX: -27
+  maxX: 27
 --- !u!114 &800337055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3305,6 +3307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72685549b4461794ba7e7e5676d1aa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxX: 11
+  minX: -11
   target: {fileID: 800337051}
 --- !u!1 &2099073426
 GameObject:
