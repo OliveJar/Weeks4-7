@@ -5,6 +5,7 @@ using UnityEngine;
 public class WorldSpawner : MonoBehaviour
 {
     public GameObject ground;
+    public GameObject enemy;
     public Transform spawnLocation;
     public float timer;
     private float t = 50;
@@ -18,6 +19,7 @@ public class WorldSpawner : MonoBehaviour
         {
             t = 50;
             Instantiate (ground, spawnLocation);
+            Instantiate (enemy, spawnLocation);
         }
     }
 }

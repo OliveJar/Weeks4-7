@@ -15,12 +15,14 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.FindWithTag("Enemy").GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        enemy = GameObject.FindWithTag("Enemy").GetComponent<Transform>();
+
         x = enemy.transform.position.x - transform.position.x;
         y = enemy.transform.position.y - transform.position.y;
 
