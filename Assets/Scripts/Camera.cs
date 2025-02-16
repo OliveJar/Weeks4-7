@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private Vector2 pos;
+    private Vector3 pos;
     public float maxX;
     public float minX;
     private Vector3 offset = new Vector3(0f, 5f, -10f);
@@ -16,7 +16,7 @@ public class Camera : MonoBehaviour
     private void Update()
     {
         Vector3 targetPosition = target.position + offset;
-        pos = new Vector3 (Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, -1);
+        pos = new Vector3 (Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y, transform.position.z);
         transform.position = Vector3.SmoothDamp(pos, targetPosition, ref velocity, smoothTime);
     }
 }

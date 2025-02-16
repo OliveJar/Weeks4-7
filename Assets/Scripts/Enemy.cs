@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = -10;
+
+    public TextMeshProUGUI scoreText;
+    private int score = 0;
 
     public Transform bullet;
 
@@ -17,6 +21,7 @@ public class Enemy : MonoBehaviour
         transform.position = new Vector2(25, Random.Range(-4, 1));
         rb = GetComponent<Rigidbody>();
         bullet = GameObject.FindWithTag("bullet").GetComponent<Transform>();
+        //scoreText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -31,7 +36,11 @@ public class Enemy : MonoBehaviour
         {
             print("hit");
             Destroy(gameObject);
+            score++;
+            Debug.Log(score);
         }
+
+        scoreText.text = "Score: " + score;
 
         Destroy(gameObject, 20);
     }
