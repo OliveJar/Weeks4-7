@@ -2373,7 +2373,7 @@ MonoBehaviour:
   ammo: {fileID: 703597953}
   ammoclip: {fileID: 8300000, guid: 03c7c6c2c30a7304da79187ef5f1ea04, type: 3}
   ammoSound: {fileID: 365907559}
-  time: 90
+  time: 70
 --- !u!1 &853611629
 GameObject:
   m_ObjectHideFlags: 0

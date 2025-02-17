@@ -7,7 +7,7 @@ public class Ammo : MonoBehaviour
     public GameObject ammo;
     public AudioClip ammoclip;
     public AudioSource ammoSound;
-    public float time = 80;
+    public float time = 100;
     private float T = 300;
     private float x;
     private float y;
