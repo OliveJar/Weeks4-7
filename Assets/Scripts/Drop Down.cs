@@ -5,15 +5,18 @@ using UnityEngine;
 public class DropDown : MonoBehaviour
 {
     public GameObject Scenes;
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool IsMouseOver = false;
+    private bool IsMouseLeft = true;
 
     void OnMouseOver()
     {
         Scenes.SetActive(true);
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Scenes.SetActive(false);
+        }
     }
 }
