@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float speed = -10;
+    public float speed = 10;
+    private float velocity;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         Destroy(gameObject, 20);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(speed, 0, 0);
+        velocity = speed * Time.deltaTime;
+        transform.position = new Vector2 (transform.position.x - velocity, 0);
     }
 }
