@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 8;
     private float velocity;
 
     // Start is called before the first frame update

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float speed = -10;
+    public float speed = 8;
+    private float velocity;
 
     public Transform bullet;
 
@@ -16,15 +16,14 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         transform.position = new Vector2(25, Random.Range(-4, 1));
-        rb = GetComponent<Rigidbody>();
         bullet = GameObject.FindWithTag("bullet").GetComponent<Transform>();
-        //scoreText = GameObject.FindWithTag("Score").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector3(speed, 0, 0);
+        velocity = speed * Time.deltaTime;
+        transform.position = new Vector2 (transform.position.x - velocity, 0);
 
         x = transform.position.x - bullet.transform.position.x;
         y = transform.position.y - bullet.transform.position.y;

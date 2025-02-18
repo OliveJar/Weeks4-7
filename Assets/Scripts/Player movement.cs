@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Playermovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    [Header("Gun")]
+    public GameObject flash;
+    private bool isflash;
+    private float t;
+    public AudioClip pew;
+    public AudioSource playerFX;
 
+    [Header("Player Movement")]
+    public Rigidbody2D rb;
     public Transform Weapon;
+    private bool isCarrying = false;
     public float groundY = -5;
     private float gY;
     private bool isFalling;
@@ -45,6 +53,7 @@ public class Playermovement : MonoBehaviour
         if (x < 1.5 && y < 1.5)
         {
             Weapon.transform.position = transform.position;
+            isCarrying = true;
         }
 
         if (gY > -1.1f)
@@ -58,6 +67,22 @@ public class Playermovement : MonoBehaviour
 
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, minX, maxX), transform.position.y);
 
+        if (Input.GetButtonDown("Fire1") && isCarrying)
+        {
+            isflash = true;
+            flash.SetActive(true);
+            playerFX.PlayOneShot(pew, 0.1f);
+        }
+        if (isflash)
+        {
+            t -= 5 * Time.deltaTime;
+        }
+        if (t <= 0)
+        {
+            flash.SetActive(false);
+            t = 1;
+            isflash = false;
+        }
     }
 
 }
